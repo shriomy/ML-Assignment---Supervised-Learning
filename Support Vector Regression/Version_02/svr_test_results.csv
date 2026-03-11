@@ -1,0 +1,2 @@
+test_mae,test_mse,test_rmse,test_r2,best_kernel,best_C,best_epsilon,best_gamma
+454.3168836882562,3076867.7118627126,1754.1002570727571,0.6852025338371488,rbf,50,1.0,scale
