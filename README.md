@@ -16,10 +16,14 @@ In this repository, we will be comparing 4 different alogorithms against a commo
 3. Run the scripts in the appropriate order in each branch
 
 ## Authors
-Fernandopulle S.N.
-Jameela M.J.F.
-Luvinson I
-Peiris M.S.M.
+Fernandopulle S.N. (snimashafernandopulle@gmail.com)
+
+Jameela M.J.F. ()
+
+Luvinson I ()
+
+Peiris M.S.M. ()
+
 
 ## Algortihms used:
 1. Support Vector Regression (SVR)
