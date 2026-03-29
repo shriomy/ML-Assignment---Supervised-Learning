@@ -6,8 +6,11 @@ Gradient Boosting is an ensemble machine learning technique that builds multiple
 
 ## Why Gradient Boosting for Medical Costs?
 ♦️ Handles non-linear relationships (e.g., age vs cost spikes at certain ages)
+
 ♠️ Works with mixed data types (numerical + categorical)
+
 ♥️ Robust to outliers (medical cost outliers common)
+
 ♣️ Provides feature importance (tells you what drives costs)
 
 
