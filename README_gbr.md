@@ -12,16 +12,10 @@ Gradient Boosting is an ensemble machine learning technique that builds multiple
 
 
 ## Getting Started
-1️⃣ Clone this repository
-2️⃣ Install required dependencies in each branch 
-3️⃣ Run the scripts in the appropriate order in each branch
-4️⃣
-5️⃣
-6️⃣
-7️⃣
-8️⃣
-9️⃣
-🔟
+1. Clone this repository
+2. Install required dependencies in each branch 
+3. Run the scripts in the appropriate order in each branch
+4. 
 
 ## Model Training steps
 🕐 Data preprocessing
