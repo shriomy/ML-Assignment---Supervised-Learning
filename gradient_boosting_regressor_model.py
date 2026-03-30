@@ -263,3 +263,21 @@ plt.tight_layout()
 plt.savefig('model_diagnostics.png', dpi=100)
 plt.show()
 
+print("\n" + "="*60)
+print("GRADIENT BOOSTING REGRESSOR - FINAL REPORT")
+print("="*60)
+print(f"Dataset size: {len(df)} records")
+print(f"Features used: {X.shape[1]} features")
+print(f"Train/Val/Test split: 70%/10%/20%")
+print(f"\nFinal Model Parameters:")
+for param, value in best_gb.get_params().items():
+    if param in ['n_estimators', 'learning_rate', 'max_depth', 'min_samples_split', 'subsample']:
+        print(f"  {param}: {value}")
+
+print(f"\nTest Set Performance:")
+print(f"  MAE: ${test_mae:,.2f}")
+print(f"  RMSE: ${test_rmse:,.2f}")
+print(f"  R²: {test_r2:.4f}")
+
+print(f"\nTop 5 Most Important Features:")
+
