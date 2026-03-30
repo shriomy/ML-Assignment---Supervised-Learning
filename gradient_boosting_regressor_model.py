@@ -146,3 +146,40 @@ if train_metrics[2] - val_metrics[2] > 0.1:
 else:
     print("\n✓ Good generalization (no severe overfitting)")
 
+print("\n" + "="*50)
+print("HYPERPARAMETER TUNING")
+print("="*50)
+
+# Define parameter grid
+param_grid = {
+    'n_estimators': [50, 100, 150],
+    'learning_rate': [0.05, 0.1, 0.15],
+    'max_depth': [3, 4, 5],
+    'min_samples_split': [5, 10],
+    'subsample': [0.7, 0.8, 0.9]
+}
+
+# Randomized search (faster than grid search)
+gb_tuned = GradientBoostingRegressor(random_state=42)
+
+random_search = RandomizedSearchCV(
+    gb_tuned,
+    param_distributions=param_grid,
+    n_iter=20,  # Try 20 combinations
+    cv=3,       # 3-fold cross validation
+    scoring='r2',
+    random_state=42,
+    n_jobs=-1   # Use all CPU cores
+)
+
+print("Searching for best parameters (this may take 2-5 minutes)...")
+random_search.fit(X_train, y_train)
+
+print(f"\nBest parameters found:")
+for param, value in random_search.best_params_.items():
+    print(f"  {param}: {value}")
+print(f"\nBest cross-validation R²: {random_search.best_score_:.4f}")
+
+# Use best model
+best_gb = random_search.best_estimator_
+
