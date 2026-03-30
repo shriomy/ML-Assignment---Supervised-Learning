@@ -22,6 +22,8 @@ Gradient Boosting is an ensemble machine learning technique that builds multiple
 5. Create virtual environment -> python -m venv venv
 6. Install libraries -> pip install pandas numpy scikit-learn matplotlib seaborn joblib
 7. Configure feature selection and data splitting
+8. Training model configuration with initial hyperparamters
+9. Train the model
 
 ## Model Training steps
 🕐 Data preprocessing

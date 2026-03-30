@@ -102,3 +102,47 @@ print(f"Train: ${y_train.mean():,.2f}")
 print(f"Val: ${y_val.mean():,.2f}")
 print(f"Test: ${y_test.mean():,.2f}")
 
+# Initialize model with reasonable defaults
+gb_model = GradientBoostingRegressor(
+    n_estimators=100,        # 100 trees
+    learning_rate=0.1,       # contribution of each tree
+    max_depth=4,             # tree depth
+    min_samples_split=5,     # minimum samples to split a node
+    min_samples_leaf=2,      # minimum samples in leaf node
+    subsample=0.8,           # use 80% of data for each tree
+    random_state=42
+)
+
+# Train the model
+print("Training Gradient Boosting Regressor...")
+gb_model.fit(X_train, y_train)
+print("Training complete!")
+
+# Predictions
+y_train_pred = gb_model.predict(X_train)
+y_val_pred = gb_model.predict(X_val)
+
+# Evaluate
+def evaluate_model(y_true, y_pred, set_name):
+    mae = mean_absolute_error(y_true, y_pred)
+    rmse = np.sqrt(mean_squared_error(y_true, y_pred))
+    r2 = r2_score(y_true, y_pred)
+    
+    print(f"\n{set_name} SET PERFORMANCE:")
+    print(f"MAE: ${mae:,.2f}")
+    print(f"RMSE: ${rmse:,.2f}")
+    print(f"R² Score: {r2:.4f}")
+    return mae, rmse, r2
+
+print("="*50)
+print("INITIAL MODEL PERFORMANCE")
+print("="*50)
+train_metrics = evaluate_model(y_train, y_train_pred, "TRAIN")
+val_metrics = evaluate_model(y_val, y_val_pred, "VALIDATION")
+
+# Check for overfitting
+if train_metrics[2] - val_metrics[2] > 0.1:
+    print("\n⚠️ Possible overfitting detected (R² difference > 0.1)")
+else:
+    print("\n✓ Good generalization (no severe overfitting)")
+
