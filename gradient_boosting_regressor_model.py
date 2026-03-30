@@ -183,3 +183,22 @@ print(f"\nBest cross-validation R²: {random_search.best_score_:.4f}")
 # Use best model
 best_gb = random_search.best_estimator_
 
+# Predict with tuned model
+y_val_pred_tuned = best_gb.predict(X_val)
+
+print("="*50)
+print("TUNED MODEL - VALIDATION SET")
+print("="*50)
+val_mae = mean_absolute_error(y_val, y_val_pred_tuned)
+val_rmse = np.sqrt(mean_squared_error(y_val, y_val_pred_tuned))
+val_r2 = r2_score(y_val, y_val_pred_tuned)
+
+print(f"MAE: ${val_mae:,.2f}")
+print(f"RMSE: ${val_rmse:,.2f}")
+print(f"R² Score: {val_r2:.4f}")
+
+# Compare with initial model
+print(f"\nImprovement vs initial model:")
+print(f"MAE: Improved by ${val_metrics[0] - val_mae:,.2f}")
+print(f"R²: Improved by {val_r2 - val_metrics[2]:.4f}")
+

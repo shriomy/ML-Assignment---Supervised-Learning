@@ -25,6 +25,7 @@ Gradient Boosting is an ensemble machine learning technique that builds multiple
 8. Training model configuration with initial hyperparamters
 9. Train the model
 10. Hyperparameter tuning
+11. Evaluate Best Model on Validation Set
 
 ## Model Training steps
 🕐 Data preprocessing
