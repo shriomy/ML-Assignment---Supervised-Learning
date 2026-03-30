@@ -23,6 +23,23 @@ sns.set_palette("husl")
 
 print("All libraries imported successfully!")
 
+# Load your dataset (update filename to match yours)
+df = pd.read_csv('medical_insurance_cost.csv')  # Change to your filename
+
+# Quick exploration
+print("="*50)
+print("DATASET OVERVIEW")
+print("="*50)
+print(f"Dataset shape: {df.shape}")
+print(f"\nFirst 5 rows:")
+print(df.head())
+print(f"\nColumn names:")
+print(df.columns.tolist())
+print(f"\nData types:")
+print(df.dtypes.value_counts())
+print(f"\nMissing values per column:")
+print(df.isnull().sum()[df.isnull().sum() > 0])
+
 # Define columns to drop (leakage + irrelevant)
 columns_to_drop = [
     'person_id', 

@@ -18,7 +18,7 @@ Gradient Boosting is an ensemble machine learning technique that builds multiple
 1. Imported all necessary libraries
 2. Scikit-learn is used for hyperparameter tuning
 3. Loaded Dataset
-4. 
+4. Feature selection and defined columns to consider
 
 ## Model Training steps
 🕐 Data preprocessing
@@ -38,6 +38,6 @@ Gradient Boosting is an ensemble machine learning technique that builds multiple
 
 ## 🏁Test Results and analysis: 
 
-## 🎲Try yourself: Run python main.py
+## 🎲Try yourself: Run python gradient_boosting_regressor_model.py
 
 
