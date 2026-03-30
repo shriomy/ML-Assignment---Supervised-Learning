@@ -63,3 +63,21 @@ y = df[target]
 
 print(f"Features after removal: {X.shape[1]}")
 print(f"\nRemaining features:\n{X.columns.tolist()}")
+
+# Identify categorical columns
+categorical_cols = X.select_dtypes(include=['object']).columns.tolist()
+numerical_cols = X.select_dtypes(include=['int64', 'float64']).columns.tolist()
+
+print(f"Categorical columns: {categorical_cols}")
+print(f"Numerical columns: {numerical_cols[:10]}... (total: {len(numerical_cols)})")
+
+# Apply Label Encoding for categorical features
+label_encoders = {}
+for col in categorical_cols:
+    le = LabelEncoder()
+    X[col] = le.fit_transform(X[col].astype(str))
+    label_encoders[col] = le
+    print(f"Encoded {col}: {dict(zip(le.classes_, le.transform(le.classes_)))}")
+
+print("\nAll categorical features encoded successfully!")
+
