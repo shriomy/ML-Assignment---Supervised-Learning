@@ -24,7 +24,7 @@ sns.set_palette("husl")
 print("All libraries imported successfully!")
 
 # Load your dataset (update filename to match yours)
-df = pd.read_csv('medical_insurance_cost.csv')  # Change to your filename
+df = pd.read_csv('medical_insurance.csv')
 
 # Quick exploration
 print("="*50)
