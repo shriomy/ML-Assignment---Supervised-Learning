@@ -202,3 +202,27 @@ print(f"\nImprovement vs initial model:")
 print(f"MAE: Improved by ${val_metrics[0] - val_mae:,.2f}")
 print(f"R²: Improved by {val_r2 - val_metrics[2]:.4f}")
 
+# Final evaluation on test set
+y_test_pred = best_gb.predict(X_test)
+
+print("="*50)
+print("FINAL MODEL - TEST SET (UNSEEN DATA)")
+print("="*50)
+test_mae = mean_absolute_error(y_test, y_test_pred)
+test_rmse = np.sqrt(mean_squared_error(y_test, y_test_pred))
+test_r2 = r2_score(y_test, y_test_pred)
+
+print(f"MAE: ${test_mae:,.2f}")
+print(f"RMSE: ${test_rmse:,.2f}")
+print(f"R² Score: {test_r2:.4f}")
+
+# Interpret R²
+if test_r2 > 0.8:
+    print("\n✓ Excellent model (explains >80% of variance)")
+elif test_r2 > 0.6:
+    print("\n✓ Good model (explains 60-80% of variance)")
+elif test_r2 > 0.4:
+    print("\n⚠️ Moderate model (explains 40-60% of variance)")
+else:
+    print("\n⚠️ Poor model (<40% variance explained - consider more feature engineering)")
+
