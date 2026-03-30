@@ -81,3 +81,24 @@ for col in categorical_cols:
 
 print("\nAll categorical features encoded successfully!")
 
+# First split: separate test set (20%)
+X_temp, X_test, y_temp, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+
+# Second split: separate validation from remaining (10% of total = 12.5% of temp)
+X_train, X_val, y_train, y_val = train_test_split(
+    X_temp, y_temp, test_size=0.125, random_state=42  # 0.125 of 80% = 10% of total
+)
+
+print("="*50)
+print("DATA SPLIT RESULTS")
+print("="*50)
+print(f"Training set: {X_train.shape[0]} samples ({X_train.shape[0]/len(X)*100:.1f}%)")
+print(f"Validation set: {X_val.shape[0]} samples ({X_val.shape[0]/len(X)*100:.1f}%)")
+print(f"Testing set: {X_test.shape[0]} samples ({X_test.shape[0]/len(X)*100:.1f}%)")
+print(f"\nTarget mean:")
+print(f"Train: ${y_train.mean():,.2f}")
+print(f"Val: ${y_val.mean():,.2f}")
+print(f"Test: ${y_test.mean():,.2f}")
+
