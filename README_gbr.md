@@ -19,25 +19,21 @@ Gradient Boosting is an ensemble machine learning technique that builds multiple
 2. Scikit-learn is used for hyperparameter tuning
 3. Loaded Dataset
 4. Feature selection and defined columns to consider
-5. Create virtual environment -> python -m venv venv
-6. Install libraries -> pip install pandas numpy scikit-learn matplotlib seaborn joblib
-7. Configure feature selection and data splitting
+5. Created virtual environment -> python -m venv venv
+6. Installed libraries -> pip install pandas numpy scikit-learn matplotlib seaborn joblib
+7. Configured feature selection, preprocessing and data splitting
 8. Training model configuration with initial hyperparamters
-9. Train the model
-10. Hyperparameter tuning
-11. Evaluate Best Model on Validation Set
-12. Test the model
-13. Visualization of Results
-14. Added a Summary Report
+9. Trained the model
+10. Testing with validation data
+11. Hyperparameter tuning
+12. Repeated till a good model arrives
+13. Saved the model
+14. Saved model tested on testing set
+15. Added test results and analyss
 
 ## Model Training steps
-🕐 Data preprocessing
-
-🕑 Model training and evaluation
-
-🕒 Performance metrics
-
-🕓 Results and analysis
+🕐 Run .ipnyb file from the kernel on VS code or google colabs after uploading or,
+🕐 Run python gradient_boosting_regressor_model.py to run the python code on VS code
 
 ## 🃏Hyperparameters used:
 - n_estimators:
@@ -48,6 +44,6 @@ Gradient Boosting is an ensemble machine learning technique that builds multiple
 
 ## 🏁Test Results and analysis: 
 
-## 🎲Try yourself: Run python gradient_boosting_regressor_model.py
+## 🎲Try yourself: Run python gradient_boosting_regressor_model.py or Run .ipnyb file from kernel (VS code) or on google colabs
 
 
