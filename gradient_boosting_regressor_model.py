@@ -226,3 +226,40 @@ elif test_r2 > 0.4:
 else:
     print("\n⚠️ Poor model (<40% variance explained - consider more feature engineering)")
 
+# Create diagnostic plots
+fig, axes = plt.subplots(2, 2, figsize=(12, 10))
+
+# Plot 1: Actual vs Predicted (Test Set)
+axes[0, 0].scatter(y_test, y_test_pred, alpha=0.5, edgecolors='k', linewidth=0.5)
+axes[0, 0].plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'r--', lw=2)
+axes[0, 0].set_xlabel('Actual Medical Cost ($)')
+axes[0, 0].set_ylabel('Predicted Medical Cost ($)')
+axes[0, 0].set_title(f'Actual vs Predicted (R² = {test_r2:.3f})')
+
+# Plot 2: Residuals Distribution
+residuals = y_test - y_test_pred
+axes[0, 1].hist(residuals, bins=50, edgecolor='black', alpha=0.7)
+axes[0, 1].axvline(x=0, color='r', linestyle='--', linewidth=2)
+axes[0, 1].set_xlabel('Residual (Actual - Predicted)')
+axes[0, 1].set_ylabel('Frequency')
+axes[0, 1].set_title('Distribution of Residuals')
+
+# Plot 3: Residuals vs Predicted
+axes[1, 0].scatter(y_test_pred, residuals, alpha=0.5, edgecolors='k', linewidth=0.5)
+axes[1, 0].axhline(y=0, color='r', linestyle='--', linewidth=2)
+axes[1, 0].set_xlabel('Predicted Medical Cost ($)')
+axes[1, 0].set_ylabel('Residual')
+axes[1, 0].set_title('Residuals vs Predicted Values')
+
+# Plot 4: Error Distribution (Percentage)
+percent_error = np.abs(residuals / y_test) * 100
+percent_error = percent_error[percent_error < 100]  # Cap at 100% for visualization
+axes[1, 1].hist(percent_error, bins=50, edgecolor='black', alpha=0.7)
+axes[1, 1].set_xlabel('Absolute Percentage Error (%)')
+axes[1, 1].set_ylabel('Frequency')
+axes[1, 1].set_title(f'Mean Absolute % Error: {percent_error.mean():.1f}%')
+
+plt.tight_layout()
+plt.savefig('model_diagnostics.png', dpi=100)
+plt.show()
+
