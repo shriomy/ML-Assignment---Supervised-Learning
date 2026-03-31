@@ -32,10 +32,6 @@ Gradient Boosting is an ensemble machine learning technique that builds multiple
 15. Added test results and analysis
 16. Added a feature predictiveness analysis after hyperparameter tuning
 
-## Model Training steps
-🕐 Run .ipnyb file from the kernel on VS code or google colabs after uploading or,
-🕐 Run python gradient_boosting_regressor_model.py to run the python code on VS code
-
 ## 🃏Hyperparameters used:
 - n_estimators: 200
 - learning_rate: 0.05
@@ -55,7 +51,7 @@ Gradient Boosting is an ensemble machine learning technique that builds multiple
 ![alt text](test_set_results.png)
 
 ### 🎲Try yourself
-#### Run python gradient_boosting_regressor_model.py or 
-#### Run .ipnyb file from kernel on VS code or on google colabs
+##### Run python gradient_boosting_regressor_model.py or 
+##### Run .ipnyb file from kernel on VS code or on google colabs
 
 
