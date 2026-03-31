@@ -30,6 +30,7 @@ Gradient Boosting is an ensemble machine learning technique that builds multiple
 13. Saved the model
 14. Saved model tested on testing set
 15. Added test results and analysis
+16. Added a feature predictiveness analysis after hyperparameter tuning
 
 ## Model Training steps
 🕐 Run .ipnyb file from the kernel on VS code or google colabs after uploading or,
