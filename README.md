@@ -26,7 +26,7 @@ Peiris M.S.M. ()
 
 
 ## Algortihms used:
-1. Support Vector Regressio
+1. Support Vector Regression
 2. Random Forest Regression
 3. Decision Tree Regression
 4. Gradient Boosting Regression
