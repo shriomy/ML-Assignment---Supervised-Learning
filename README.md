@@ -26,10 +26,10 @@ Peiris M.S.M. ()
 
 
 ## Algortihms used:
-1. Support Vector Regression (SVR)
-2. Random Forest Regressor
-3. Decision Tree Regressor
-4. Gradient Boosting Regressor
+1. Support Vector Regressio
+2. Random Forest Regression
+3. Decision Tree Regression
+4. Gradient Boosting Regression
 
 ## Dataset contains following features: 
 1. person_id: Unique identifier for each individual
