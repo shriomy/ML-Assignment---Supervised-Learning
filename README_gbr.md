@@ -44,7 +44,12 @@ Gradient Boosting is an ensemble machine learning technique that builds multiple
 - subsample:
 
 ## 🏁Test Results and analysis: 
+#### Training Results against validation set
+![alt text](gradient_boosting_comprehensive_training.png)
 
-## 🎲Try yourself: Run python gradient_boosting_regressor_model.py or Run .ipnyb file from kernel (VS code) or on google colabs
+#### Test Results
+![alt text](test_set_results.png)
+
+### 🎲Try yourself: Run python gradient_boosting_regressor_model.py or Run .ipnyb file from kernel (VS code) or on google colabs
 
 
