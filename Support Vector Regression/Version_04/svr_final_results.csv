@@ -1,0 +1,2 @@
+train_mae,train_rmse,train_r2,val_mae,val_rmse,val_r2,test_mae,test_rmse,test_r2,best_kernel,best_C,epsilon,gamma,log_transform,leakage_removed,feature_engineering,training_sample_size
+1665.8018159952953,2996.944239668796,0.06609269443910504,1642.9269361572626,2980.983938597956,0.12014782120622458,1661.4580592377527,3022.787491245987,0.06515924743646573,rbf,0.01,0.1,scale,True,True,True,40000
